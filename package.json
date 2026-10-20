@@ -4,7 +4,8 @@
   "type": "commonjs",
   "dependencies": {
     "@cap-js/hana": "^3",
-    "@sap/cds": "^10"
+    "@sap/cds": "^10",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^3",
@@ -26,5 +27,32 @@
   ],
   "sapux": [
     "app/testcapproject"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "john": {"password":"senthil",
+              "roles": [
+                "productmanager"
+              ]
+            },
+            "senthil": {
+                    "roles": [
+                "productmanager"
+              ]
+            }
+          }
+        }
+        , "db":{
+            "mock": "sqlite",
+            "credentials": {
+              "database": "db.sqlite"
+            }
+        }
+      }
+    }
+  }
 }

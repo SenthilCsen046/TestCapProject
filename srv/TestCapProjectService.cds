@@ -37,3 +37,4 @@ service TestCapProjectService
     )
     returns String;
 }
+annotate TestCapProjectService with @(requires: 'productmanager');
